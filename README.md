@@ -8,3 +8,6 @@ $chmod +x QE_file_prep.sh
 
 ### Then follow the following structure:
 ./QE_file_prep.sh input.cif output.in
+
+## Known problems
+When making the cif file yourself, you generally don't have an author added, this screws up the formatting a bit (it still works tho)
