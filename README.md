@@ -23,4 +23,4 @@ Basic script that will simulate for different volumes after which you get a file
 $chmod +x RelaxCrystal.sh
 
 #### Then follow the following structure:
-RelaxCrystal.sh file.in <relative x length> <relative y length> <relative z length>
+RelaxCrystal.sh file.in \<relative x length\> \<relative y length\> \<relative z length\>
