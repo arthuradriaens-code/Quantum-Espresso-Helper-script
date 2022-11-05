@@ -14,8 +14,8 @@ $chmod +x QE_file_prep.sh
 When making the cif file yourself, you generally don't have an author added, this screws up the formatting a bit (it still works tho)
 
 
-## RelaxCrystal.sh
-Basic script that will simulate for different volumes after which you get a file VolVsE.out, this file can then be used by ev.x
+## FindVol.sh
+Basic script that will simulate for different volumes after which you get a file VolVsE.txt, this file can then be used by ev.x
 
 ### How to use:
 
@@ -24,3 +24,10 @@ $chmod +x RelaxCrystal.sh
 
 #### Then follow the following structure:
 RelaxCrystal.sh file.in \<relative x length\> \<relative y length\> \<relative z length\>
+
+
+## FindVolMultiCore.sh
+Same as RelaxCrystal but will spam all your cores
+
+### How to use:
+same as RelaxCrystal.sh

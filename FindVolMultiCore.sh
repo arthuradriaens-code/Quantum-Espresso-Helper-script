@@ -5,7 +5,7 @@ BaseValue=$(grep "A = " "$1" | sed 's/.[^=]*=\(.[^ \t]*\)[ \t]*\(.[^ \t]*\)\(.*\
 x_length="$2"
 y_length="$3"
 z_length="$4"
-BaseVol=$(echo "$BaseValue * $BaseValue * $BaseValue * $x_length * $y_length * $z_length" | bc)
+BaseVol=$(echo "$BaseValue * $BaseValue * $BaseValue * $x_length * $y_length * $z_length /( 0.529177 * 0.529177 * 0.529177)" | bc)
 Min5Value=$(echo "$BaseValue - 0.05 * $BaseValue" | bc)
 VolMin5=$(echo "$BaseVol - 0.05 * $BaseVol" | bc)
 sed "s/A =.*/A = $Min5Value/g" $1 > Min5File.in
@@ -19,10 +19,10 @@ Min20Value=$(echo "$BaseValue - 0.20 * $BaseValue" | bc)
 VolMin20=$(echo "$BaseVol - 0.20 * $BaseVol" | bc)
 sed "s/A =.*/A = $Min20Value/g" $1 > Min20File.in
 
-pw.x -input Min5File.in > Min5File.out
-pw.x -input Min10File.in > Min10File.out
-pw.x -input Min15File.in > Min15File.out
-pw.x -input Min20File.in > Min20File.out
+mpirun --use-hwthread-cpus pw.x -input Min5File.in > Min5File.out
+mpirun --use-hwthread-cpus pw.x -input Min10File.in > Min10File.out
+mpirun --use-hwthread-cpus pw.x -input Min15File.in > Min15File.out
+mpirun --use-hwthread-cpus pw.x -input Min20File.in > Min20File.out
 
 echo -n $VolMin5 > VolVsE.txt #1 to remove previous
 echo -n "	" >> VolVsE.txt
