@@ -17,6 +17,9 @@ $chmod +x qeconvert
 #### or (for supercells with vacuum)
 ./qeconvert input.cif output.in scalex scaley scalez vacuumx vacuumy vacuumz
 
+#### and even supercells surfaces (e.g 110) with vacuum
+see ./qeconvert -h
+
 ### How to use: extra
 If you forget how to use it, I added a help entry, so just
 start the program with the -h flag as "qeconvert -h".
