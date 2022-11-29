@@ -29,23 +29,3 @@ just be called from anywhere like "qeconvert ..."
 
 ### Known problems
 When making the cif file yourself, you generally don't have an author added, this screws up the formatting a bit (it still works tho)
-
-
-
-## FindVol.sh
-Basic script that will simulate for different volumes after which you get a file VolVsE.txt, this file can then be used by ev.x
-
-### How to use:
-
-#### First make the file executable via
-$chmod +x RelaxCrystal.sh
-
-#### Then follow the following structure:
-RelaxCrystal.sh file.in \<relative x length\> \<relative y length\> \<relative z length\>
-
-
-## FindVolMultiCore.sh
-Same as RelaxCrystal but will spam all your cores
-
-### How to use:
-same as RelaxCrystal.sh
